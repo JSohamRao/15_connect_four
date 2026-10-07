@@ -6,7 +6,7 @@ class Board:
         self.grid = [["."] * COLS for _ in range(ROWS)]
 
     def drop(self, col, token):
-        if not 0 <= col < COLS:
+        if type(col) is not int or not 0 <= col < COLS or token not in ("X", "O"):
             return None
         for r in range(ROWS - 1, -1, -1):
             if self.grid[r][col] == ".":
@@ -17,9 +17,13 @@ class Board:
     def full(self):
         return all(self.grid[0][c] != "." for c in range(COLS))
 
-    def winner(self, token):
+    def legal_columns(self):
+        return [c for c in range(COLS) if self.grid[0][c] == "."]
 
-        directions = [(0, 1), (1, 0)]
+    def winner(self, token):
+        if token not in ("X", "O"):
+            return False
+        directions = [(0, 1), (1, 0), (1, 1), (1, -1)]
         for r in range(ROWS):
             for c in range(COLS):
                 if self.grid[r][c] != token:

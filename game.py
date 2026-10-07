@@ -1,4 +1,4 @@
-from board import Board
+from board import Board, COLS
 from ai import AI
 
 
@@ -10,11 +10,18 @@ class Game:
 
     def run(self):
         print("Connect Four — you are X.")
+        self.board.print()
+        if self._finished():
+            return
         while True:
-            self.board.print()
             if self.turn == "X":
-                raw = input("Column (1-7), or q: ").strip().lower()
+                try:
+                    raw = input(f"Column (1-{COLS}), or q: ").strip().lower()
+                except (EOFError, KeyboardInterrupt):
+                    print("\nGame ended.")
+                    return
                 if raw == "q":
+                    print("Game ended.")
                     return
                 try:
                     col = int(raw) - 1
@@ -24,19 +31,26 @@ class Game:
             else:
                 col = self.ai.choose_column(self.board)
 
-            if col is None or self.board.drop(col, self.turn) is None:
+            row = self.board.drop(col, self.turn)
+            if row is None:
                 print("Column unavailable.")
                 if self.turn == "O":
                     return
                 continue
 
-            if self.board.winner(self.turn):
-                self.board.print()
-                print(self.turn, "wins!")
-                return
-            if self.board.full():
-                self.board.print()
-                print("Draw.")
+            print(f"{self.turn} placed a disc in column {col + 1}.")
+            self.board.print()
+            if self._finished():
                 return
 
             self.turn = "O" if self.turn == "X" else "X"
+
+    def _finished(self):
+        for token in ("X", "O"):
+            if self.board.winner(token):
+                print(token, "wins!")
+                return True
+        if self.board.full():
+            print("Draw.")
+            return True
+        return False

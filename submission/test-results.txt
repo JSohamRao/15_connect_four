@@ -1,0 +1,31 @@
+test_avoids_supporting_an_opponents_win (test_connect_four.AITests.test_avoids_supporting_an_opponents_win) ... ok
+test_blocks_immediate_threats_in_every_direction (test_connect_four.AITests.test_blocks_immediate_threats_in_every_direction) ... ok
+test_configurable_tokens (test_connect_four.AITests.test_configurable_tokens) ... ok
+test_full_columns_are_ignored (test_connect_four.AITests.test_full_columns_are_ignored) ... ok
+test_handles_full_board (test_connect_four.AITests.test_handles_full_board) ... ok
+test_only_legal_column_is_chosen (test_connect_four.AITests.test_only_legal_column_is_chosen) ... ok
+test_opening_prefers_centre_without_output_or_mutation (test_connect_four.AITests.test_opening_prefers_centre_without_output_or_mutation) ... ok
+test_takes_immediate_wins_in_every_direction (test_connect_four.AITests.test_takes_immediate_wins_in_every_direction) ... ok
+test_win_has_priority_over_block (test_connect_four.AITests.test_win_has_priority_over_block) ... ok
+test_diagonals_built_by_legal_drops (test_connect_four.BoardTests.test_diagonals_built_by_legal_drops) ... ok
+test_drop_uses_gravity_and_rejects_full_column (test_connect_four.BoardTests.test_drop_uses_gravity_and_rejects_full_column) ... ok
+test_empty_cells_and_invalid_tokens_are_not_winners (test_connect_four.BoardTests.test_empty_cells_and_invalid_tokens_are_not_winners) ... ok
+test_every_direction_at_every_boundary_for_both_tokens (test_connect_four.BoardTests.test_every_direction_at_every_boundary_for_both_tokens) ... ok
+test_full_draw_fixture_has_no_winner (test_connect_four.BoardTests.test_full_draw_fixture_has_no_winner) ... ok
+test_invalid_drop_leaves_board_unchanged (test_connect_four.BoardTests.test_invalid_drop_leaves_board_unchanged) ... ok
+test_short_lines_in_all_directions_are_not_wins (test_connect_four.BoardTests.test_short_lines_in_all_directions_are_not_wins) ... ok
+test_ai_can_fill_last_cell_and_draw (test_connect_four.GameTests.test_ai_can_fill_last_cell_and_draw) ... ok
+test_ai_win_stops_without_player_input (test_connect_four.GameTests.test_ai_win_stops_without_player_input) ... ok
+test_entry_point_handles_real_console_input (test_connect_four.GameTests.test_entry_point_handles_real_console_input) ... ok
+test_existing_terminal_boards_never_request_input (test_connect_four.GameTests.test_existing_terminal_boards_never_request_input) ... ok
+test_feedback_occurs_once_per_real_move (test_connect_four.GameTests.test_feedback_occurs_once_per_real_move) ... ok
+test_full_column_does_not_change_turn_or_board (test_connect_four.GameTests.test_full_column_does_not_change_turn_or_board) ... ok
+test_invalid_input_and_ranges_do_not_move_or_call_ai (test_connect_four.GameTests.test_invalid_input_and_ranges_do_not_move_or_call_ai) ... ok
+test_last_cell_causes_draw_before_ai_turn (test_connect_four.GameTests.test_last_cell_causes_draw_before_ai_turn) ... ok
+test_player_diagonal_win_stops_before_another_turn (test_connect_four.GameTests.test_player_diagonal_win_stops_before_another_turn) ... ok
+test_quit_eof_and_interrupt_end_cleanly (test_connect_four.GameTests.test_quit_eof_and_interrupt_end_cleanly) ... ok
+
+----------------------------------------------------------------------
+Ran 26 tests in 0.178s
+
+OK
